@@ -1,50 +1,27 @@
-# React + TypeScript + Vite
+# Ad Performace Dashbord
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple dashboard showing data fetched from fake API.  
+Using some of the coolest React features, including:
 
-Currently, two official plugins are available:
+- the `use` hook to rule them all, in particular to utilize context and handle promises (no more `useEffect`'s !)
+- React `Suspense` component to show a nice spinner when a transition is in progress
+- Compound Component pattern to render a custom dropdown list
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Production URL
 
-## Expanding the ESLint configuration
+The app can be see in action here: https://ad-performance-dashboard.vercel.app/
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Local setup
 
-- Configure the top-level `parserOptions` property like this:
+Firstly create a `.env` file with the API URL:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```
+VITE_API_URL="https://my-json-server.typicode.com/akramsaouri/ad-performance/ads"
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+Then just run `npm install` to install all dependencies.  
+To start the app use `npm run start`
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## Unit testing
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+There is a sample unit test suite that test the fetch functionality. To run tests simply run `npm run test`
