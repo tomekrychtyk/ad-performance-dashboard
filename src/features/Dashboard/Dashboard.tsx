@@ -3,12 +3,13 @@ import { Ad } from '@/utils/api';
 import { AdList } from './components';
 import { Stats } from './components';
 import { useDashboard } from './hooks';
+import { FilterType } from './types';
 
 export const Dashboard = () => {
     const { ads, currentFilter } = useDashboard();
     let filteredAds: Array<Ad> = ads;
 
-    if (currentFilter !== 'all') {
+    if (currentFilter !== FilterType.All) {
         filteredAds = ads.filter((ad) => ad.type === currentFilter);
     }
 

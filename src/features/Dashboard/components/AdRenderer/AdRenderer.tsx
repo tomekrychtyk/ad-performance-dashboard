@@ -1,5 +1,6 @@
 import { formatNumber } from '@/utils/ads';
 import { Ad } from '@/utils/api';
+import { FilterType } from '../../types';
 
 interface AdRendererProps {
     ad: Ad;
@@ -34,9 +35,9 @@ export const AdRenderer = ({ ad }: AdRendererProps) => {
 
     return (
         <article className="flex flex-col h-[250px] bg-white rounded-xl overflow-hidden relative shadow-sm">
-            {ad.type === 'image' && renderImage(ad.url ?? '', ad.headline ?? 'image ad')}
-            {ad.type === 'video' && renderVideo(ad.url ?? '')}
-            {ad.type === 'text' && renderText(ad.headline ?? '', ad.description ?? '')}
+            {ad.type === FilterType.Image && renderImage(ad.url ?? '', ad.headline ?? 'image ad')}
+            {ad.type === FilterType.Video && renderVideo(ad.url ?? '')}
+            {ad.type === FilterType.Text && renderText(ad.headline ?? '', ad.description ?? '')}
             {renderAdLabel(ad.type)}
             <footer className="bg-gray-100 p-4 flex justify-between items-center absolute bottom-0 w-full border-t border border-gray-300">
                 <div className="text-xs text-gray-500">
