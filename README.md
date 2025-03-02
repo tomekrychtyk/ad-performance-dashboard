@@ -23,7 +23,7 @@ Then just run `npm install` to install all dependencies.
 
 ## Running the app locally
 
-To run all you need to do is fire this command `npm run start`
+To run all you need to do is fire this command `npm run dev`
 
 ## Unit testing
 
