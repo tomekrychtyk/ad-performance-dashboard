@@ -1,12 +1,17 @@
+import { use } from 'react';
 import { getStats } from '@/utils/ads';
 import { Ad } from '@/utils/api';
+import { getAds } from '@/utils/api';
 import { AdList } from './components';
 import { Stats } from './components';
 import { useDashboard } from './hooks';
 import { FilterType } from './types';
 
+const adsPromise = getAds();
+
 export const Dashboard = () => {
-    const { ads, currentFilter } = useDashboard();
+    const ads = use(adsPromise);
+    const { currentFilter } = useDashboard();
     let filteredAds: Array<Ad> = ads;
 
     if (currentFilter !== FilterType.All) {
