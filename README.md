@@ -19,9 +19,12 @@ Firstly create a `.env` file with the API URL:
 VITE_API_URL="https://my-json-server.typicode.com/akramsaouri/ad-performance/ads"
 ```
 
-Then just run `npm install` to install all dependencies.  
-To start the app use `npm run start`
+Then just run `npm install` to install all dependencies.
+
+## Running the app locally
+
+To run all you need to do is fire this command `npm run start`
 
 ## Unit testing
 
-There is a sample unit test suite that test the fetch functionality. To run tests simply run `npm run test`
+There is a sample unit test suite that tests the fetch functionality. To run tests simply run `npm run test`
